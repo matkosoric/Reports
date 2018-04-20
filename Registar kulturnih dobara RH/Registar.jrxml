@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Registar kulturnih dobara RH" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cbeb610b-623c-4d32-8fb4-1a24763b75d5">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="CSV"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Oznaka dobra" class="java.lang.String"/>
+	<field name="Naziv" class="java.lang.String"/>
+	<field name="Vrsta kulturnog dobra" class="java.lang.String"/>
+	<field name="Pravni status" class="java.lang.String"/>
+	<field name="Klasifikacija" class="java.lang.String"/>
+	<field name="UNESCO zastita" class="java.lang.String"/>
+	<field name="Adresa smjestaja" class="java.lang.String"/>
+	<field name="Mjesto smjestaja" class="java.lang.String"/>
+	<field name="Opcina grad" class="java.lang.String"/>
+	<field name="Zupanija" class="java.lang.String"/>
+	<field name="Naziv KO" class="java.lang.String"/>
+	<field name="Adresa KO" class="java.lang.String"/>
+	<field name="Telefon KO" class="java.lang.String"/>
+	<field name="Email KO" class="java.lang.String"/>
+	<field name="Vrijeme nastanka" class="java.lang.String"/>
+	<field name="Autori" class="java.lang.String"/>
+	<field name="Opis dobra" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="232" y="10" width="339" height="40" uuid="67834e16-a5b3-4324-b89a-3c477e74c44e"/>
+				<textElement>
+					<font size="25" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Registar kulturnih dobara RH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="58" width="321" height="22" uuid="866f2363-de15-44b5-a69c-5f2eeed0bd6b"/>
+				<text><![CDATA[Podaci preuzeti sa: http://data.gov.hr/dataset/registar-kulturnih-dobara]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="460" y="1" width="340" height="20" uuid="a2582eb2-2510-4210-b3f8-d6033dfc993c"/>
+				<textElement textAlignment="Right">
+					<font size="11" isItalic="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Registar kulturnih dobara RH - Jasper Reports demo - Matko Sorić]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="157" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="100" y="5" width="200" height="28" isPrintWhenDetailOverflows="true" uuid="9cbb73b2-658f-4b74-ad1c-b1d9a0d171eb"/>
+				<textElement>
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Naziv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="3" width="70" height="16" uuid="6624f94e-44c1-4e9b-9cf5-eb9dc7885786"/>
+				<textElement>
+					<font size="10" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Naziv:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="441" y="5" width="359" height="148" isPrintWhenDetailOverflows="true" uuid="1ad15231-aaa5-4539-ab75-241646c3f43b"/>
+				<textElement textAlignment="Justified">
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Opis dobra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="381" y="5" width="60" height="20" uuid="f01ccda2-33ec-44dd-a93e-b3628ca7e58d"/>
+				<textElement>
+					<font isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Opis dobra:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="33" width="193" height="18" uuid="47b4c6b4-2121-4cf8-ae04-155a5235885d"/>
+				<textElement>
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Zupanija}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="33" width="70" height="18" uuid="3c9d9a6a-16c3-4189-b3ee-96b04ebca919"/>
+				<textElement>
+					<font isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Županija:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="73" width="136" height="20" uuid="7118fe06-10d3-4d3a-96f3-6ef79d22c64c"/>
+				<textElement>
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Vrijeme nastanka}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="73" width="100" height="20" uuid="4b91910d-a9fb-4907-94d8-091c4ae73d8e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vrijeme nastanka:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="93" width="118" height="17" uuid="23f4db6e-bd8d-40cd-8019-1193822b7d00"/>
+				<textFieldExpression><![CDATA[$F{UNESCO zastita}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="93" width="90" height="17" uuid="9f1524df-3d14-4c19-b18b-304360c87760"/>
+				<textElement>
+					<font isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[UNESCO zaštita:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="110" width="100" height="13" uuid="013fdd0b-4256-4994-8415-9215d2fde477"/>
+				<textFieldExpression><![CDATA[$F{Autori}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="110" width="90" height="13" uuid="6509769f-8e63-4718-86fb-ca4a072f3f45"/>
+				<textElement>
+					<font isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Autori:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="700" y="0" width="100" height="20" uuid="70a0dfd3-73a1-440b-8af5-19c18e97638c"/>
+				<textElement>
+					<font pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="650" y="0" width="50" height="20" uuid="b6a434e1-c4e9-41a9-b736-1bf3ec1e827f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Stranica: ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
