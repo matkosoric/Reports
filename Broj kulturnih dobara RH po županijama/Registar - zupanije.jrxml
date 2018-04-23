@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Registar - zupanije" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="97257b70-e42a-4612-812c-7a5f0e850940">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT Zupanija, count(Zupanija) AS zbroj
+FROM world.registar
+GROUP BY Zupanija
+Order BY zbroj DESC]]>
+	</queryString>
+	<field name="Zupanija" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Zupanija"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="registar"/>
+	</field>
+	<field name="zbroj" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="zbroj"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="177" y="5" width="449" height="40" uuid="f31da0c7-14eb-4213-89f9-09851a554d92"/>
+				<textElement>
+					<font size="25" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Broj kulturnih dobara RH po županijama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="53" width="321" height="22" uuid="4e705033-3bf7-492f-b4fe-9cad8206fbf3"/>
+				<text><![CDATA[Podaci preuzeti sa: http://data.gov.hr/dataset/registar-kulturnih-dobara]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22">
+			<staticText>
+				<reportElement x="460" y="1" width="340" height="20" uuid="e70bd605-6ae4-42a6-9e3f-609e85f21100"/>
+				<textElement textAlignment="Right">
+					<font size="11" isItalic="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Jasper Reports demo - Matko Sorić]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="446" splitType="Stretch">
+			<barChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement x="0" y="0" width="800" height="446" uuid="cc182dd2-c33a-4446-b133-8eef35fb414b"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["SERIES 1"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{Zupanija}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{zbroj}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot labelRotation="60.0"/>
+					<itemLabel/>
+					<categoryAxisFormat labelRotation="60.0">
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" verticalTickLabels="true" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>
