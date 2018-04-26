@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="4.1.Registar - po vrsti" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4314d86-9b63-46c1-bb39-4810b18c7d46">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT Vrsta, Count(Vrsta) AS kolicina, Count(Vrsta)/(SELECT COUNT(*) FROM world.registar) * 100 as total
+FROM world.registar
+group by Vrsta
+order by total DESC
+LIMIT 6]]>
+	</queryString>
+	<field name="Vrsta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Vrsta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="registar"/>
+	</field>
+	<field name="kolicina" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="kolicina"/>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="59" y="10" width="436" height="40" uuid="7aa432b4-31f1-4be8-ac07-665926962a47"/>
+				<textElement>
+					<font size="25" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Omjer kulturnih dobara RH po vrstama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="58" width="321" height="22" uuid="82066235-8f23-4650-b653-8278fd7d241b"/>
+				<text><![CDATA[Podaci preuzeti sa: http://data.gov.hr/dataset/registar-kulturnih-dobara]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42">
+			<staticText>
+				<reportElement x="364" y="11" width="190" height="20" uuid="7604bf44-699d-401c-baf5-6d98f658f665"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isItalic="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Jasper Reports demo - Matko Sorić]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="599" splitType="Stretch">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="30" width="553" height="569" uuid="233b5161-0687-4d38-a495-073e01979dc1"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{Vrsta}]]></keyExpression>
+					<valueExpression><![CDATA[$F{total}]]></valueExpression>
+					<labelExpression><![CDATA[CONCATENATE($F{total}.toPlainString().substring(0,4), " %" )]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>
