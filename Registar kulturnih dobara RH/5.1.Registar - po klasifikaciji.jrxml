@@ -4,14 +4,14 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
 	<queryString language="SQL">
-		<![CDATA[SELECT Vrsta, Count(Vrsta) AS kolicina, Count(Vrsta)/(SELECT COUNT(*) FROM world.registar) * 100 as total
+		<![CDATA[SELECT Klasifikacija, Count(Klasifikacija) AS kolicina, Count(Klasifikacija)/(SELECT COUNT(*) FROM world.registar) * 100 as total
 FROM world.registar
-group by Vrsta
+group by Klasifikacija
 order by total DESC
-LIMIT 6]]>
+LIMIT 10]]>
 	</queryString>
-	<field name="Vrsta" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="Vrsta"/>
+	<field name="Klasifikacija" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Klasifikacija"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="registar"/>
 	</field>
 	<field name="kolicina" class="java.lang.Long">
@@ -26,11 +26,11 @@ LIMIT 6]]>
 	<title>
 		<band height="84" splitType="Stretch">
 			<staticText>
-				<reportElement x="42" y="10" width="471" height="40" uuid="7aa432b4-31f1-4be8-ac07-665926962a47"/>
+				<reportElement x="28" y="10" width="498" height="40" uuid="7aa432b4-31f1-4be8-ac07-665926962a47"/>
 				<textElement>
 					<font size="25" pdfEncoding="Cp1250"/>
 				</textElement>
-				<text><![CDATA[Postotak kulturnih dobara RH po vrstama]]></text>
+				<text><![CDATA[Postotak kulturnih dobara RH po klasifikaciji]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="117" y="58" width="321" height="22" uuid="82066235-8f23-4650-b653-8278fd7d241b"/>
@@ -53,13 +53,13 @@ LIMIT 6]]>
 		<band height="599" splitType="Stretch">
 			<pieChart>
 				<chart evaluationTime="Report">
-					<reportElement x="0" y="30" width="553" height="569" uuid="233b5161-0687-4d38-a495-073e01979dc1"/>
+					<reportElement x="0" y="30" width="553" height="569" uuid="24c15680-d259-4f01-a1c5-bf0e862b0a97"/>
 					<chartTitle/>
 					<chartSubtitle/>
 					<chartLegend/>
 				</chart>
 				<pieDataset>
-					<keyExpression><![CDATA[$F{Vrsta}]]></keyExpression>
+					<keyExpression><![CDATA[$F{Klasifikacija}]]></keyExpression>
 					<valueExpression><![CDATA[$F{total}]]></valueExpression>
 					<labelExpression><![CDATA[CONCATENATE($F{total}.toPlainString().substring(0,4), " %" )]]></labelExpression>
 				</pieDataset>
