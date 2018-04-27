@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="1.1.Veli-Iž-i-Mali-Iž" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6bff3a46-a221-4e40-971e-e36ce024eff2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT Godina, Mali_Iž, Veli_Iž FROM world.zadarska;]]>
+	</queryString>
+	<field name="Godina" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Godina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="zadarska"/>
+	</field>
+	<field name="Mali_Iž" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Mali_Iž"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="zadarska"/>
+	</field>
+	<field name="Veli_Iž" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Veli_Iž"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="zadarska"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="10" width="589" height="40" uuid="c6cdd0c0-74a0-4a0f-9f6f-c93d48d158a1"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Broj stanovnika Velog i Malog Iža od 1857. do 2001. godine]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="56" width="160" height="20" uuid="c4ecff05-3df5-44ab-ba1a-8c675c26fb29"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Podaci preuzeti sa: www.dzs.hr]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32">
+			<staticText>
+				<reportElement x="630" y="8" width="171" height="16" uuid="3a4680df-daac-4a09-b3d5-f26e6acb6503"/>
+				<textElement textAlignment="Right">
+					<font isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Jasper Reports demo - Matko Sorić]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="334" splitType="Stretch">
+			<xyAreaChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="10" width="801" height="310" uuid="418872d0-41f2-48a9-964b-5770a7ef5886"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend>
+						<font size="14"/>
+					</chartLegend>
+				</chart>
+				<xyDataset>
+					<xySeries>
+						<seriesExpression><![CDATA["Mali Iž"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{Godina}]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{Mali_Iž}]]></yValueExpression>
+					</xySeries>
+					<xySeries>
+						<seriesExpression><![CDATA["Veli iž"]]></seriesExpression>
+						<xValueExpression><![CDATA[$F{Godina}]]></xValueExpression>
+						<yValueExpression><![CDATA[$F{Veli_Iž}]]></yValueExpression>
+					</xySeries>
+				</xyDataset>
+				<areaPlot>
+					<plot backcolor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" tickLabelMask="#" axisLineColor="#000000">
+							<labelFont>
+								<font size="11" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="11"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" tickLabelMask="#" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</areaPlot>
+			</xyAreaChart>
+		</band>
+	</summary>
+</jasperReport>
