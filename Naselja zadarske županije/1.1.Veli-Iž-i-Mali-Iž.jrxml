@@ -1,8 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="1.1.Veli-Iž-i-Mali-Iž" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6bff3a46-a221-4e40-971e-e36ce024eff2">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="1.1.Veli-Iž-i-Mali-Iž" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="6bff3a46-a221-4e40-971e-e36ce024eff2">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="64354631-a0a8-46b9-9a26-8b80d1bbf81f">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Data Adapter "/>
+		<queryString language="SQL">
+			<![CDATA[SELECT Godina, Mali_Iž, Veli_Iž
+FROM world.zadarska]]>
+		</queryString>
+		<field name="Godina" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="Godina"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="zadarska"/>
+		</field>
+		<field name="Mali_Iž" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="Mali_Iž"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="zadarska"/>
+		</field>
+		<field name="Veli_Iž" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="Veli_Iž"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="zadarska"/>
+		</field>
+	</subDataset>
 	<queryString language="SQL">
 		<![CDATA[SELECT Godina, Mali_Iž, Veli_Iž FROM world.zadarska;]]>
 	</queryString>
@@ -22,39 +69,24 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="82" splitType="Stretch">
+		<band height="475" splitType="Stretch">
 			<staticText>
 				<reportElement x="107" y="10" width="589" height="40" uuid="c6cdd0c0-74a0-4a0f-9f6f-c93d48d158a1"/>
 				<textElement>
-					<font size="22"/>
+					<font size="22" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Broj stanovnika Velog i Malog Iža od 1857. do 2001. godine]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="321" y="56" width="160" height="20" uuid="c4ecff05-3df5-44ab-ba1a-8c675c26fb29"/>
 				<textElement>
-					<font size="11"/>
+					<font size="11" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Podaci preuzeti sa: www.dzs.hr]]></text>
 			</staticText>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="32">
-			<staticText>
-				<reportElement x="630" y="8" width="171" height="16" uuid="3a4680df-daac-4a09-b3d5-f26e6acb6503"/>
-				<textElement textAlignment="Right">
-					<font isItalic="true"/>
-				</textElement>
-				<text><![CDATA[Jasper Reports demo - Matko Sorić]]></text>
-			</staticText>
-		</band>
-	</pageHeader>
-	<summary>
-		<band height="334" splitType="Stretch">
 			<xyAreaChart>
 				<chart evaluationTime="Report">
-					<reportElement x="0" y="10" width="801" height="310" uuid="418872d0-41f2-48a9-964b-5770a7ef5886"/>
+					<reportElement x="0" y="93" width="801" height="377" uuid="418872d0-41f2-48a9-964b-5770a7ef5886"/>
 					<chartTitle/>
 					<chartSubtitle/>
 					<chartLegend>
@@ -90,6 +122,76 @@
 					</valueAxisFormat>
 				</areaPlot>
 			</xyAreaChart>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="30">
+			<staticText>
+				<reportElement x="630" y="7" width="171" height="16" uuid="3a4680df-daac-4a09-b3d5-f26e6acb6503"/>
+				<textElement textAlignment="Right">
+					<font isItalic="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[Jasper Reports demo - Matko Sorić]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="10" width="801" height="58" uuid="b967beca-1f8a-4117-9266-65cfe0eaf2ee">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="638e289b-bf16-4d36-9565-62bfa18cbb22">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="98" uuid="211abee9-3e08-4c00-9562-1bf4c5a0d863">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="98" height="20" uuid="15318522-7902-4711-b218-3535ddbedf10"/>
+								<text><![CDATA[Godina]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="98" height="20" uuid="d2d78bd6-986b-4707-912e-e5dde506de7b"/>
+								<textFieldExpression><![CDATA[$F{Godina}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="112" uuid="c5122e50-607b-4b5c-bbf3-0ccbfe7a96d4">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="112" height="20" uuid="e7815dcd-2743-4694-8204-47b3fc6ffea4"/>
+								<text><![CDATA[Mali Iž]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="112" height="20" uuid="71aa453f-31db-4416-a96a-c4cc8d681bed"/>
+								<textFieldExpression><![CDATA[$F{Mali_Iž}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="b7cf4469-def9-49b7-9dee-a1bbb243c7a9">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="20" uuid="a98eae4e-d7ef-40c1-9eb7-1587aa74a792"/>
+								<text><![CDATA[Veli Iž]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="20" uuid="b8079795-f2b5-4234-a83b-df2a9b0184d5"/>
+								<textFieldExpression><![CDATA[$F{Veli_Iž}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
 		</band>
 	</summary>
 </jasperReport>
